@@ -1,6 +1,8 @@
 from pymongo import MongoClient 
 from flask import Flask, render_template
-from account import mongo_user #importing our secret key
+import os
+
+mongo_user = os.getenv('mongo_user')#importing our secret key
      
 client = MongoClient(mongo_user) #here we import the mongo client
  
